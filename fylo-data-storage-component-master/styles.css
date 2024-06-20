@@ -1,0 +1,229 @@
+:root {
+    /* Colors */
+--gradient: hsl(6, 100%, 80%); 
+--gradient2: hsl(335, 100%, 65%);
+--paleBlue: hsl(243, 100%, 93%);
+--grayishBlue: hsl(229, 7%, 55%);
+--darkBlue: hsl(228, 56%, 26%);
+--veryDarkBlue: hsl(229, 57%, 11%);
+--white: hsl(0, 0%, 100%);
+   /* Font */
+--fs: 14px;
+--ff-raleway: "Raleway", sans-serif;
+--fw-l: 700;
+--fw-m: 400;
+}
+
+*::before,
+*,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-size: var(--fs);
+    font-family: var(--ff-raleway);
+}
+
+body {
+    height: 100vh;
+    font-family: var(--ff-raleway);
+    background-color: var(--veryDarkBlue);
+}
+
+.appWrapper {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 2rem;
+    flex-shrink: 1;
+    margin: 100px auto 0;
+}
+
+/* Left Section */
+.left-section {
+    width: 250px;
+    height: 180px;
+    padding-left: 25px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-content: center;
+    gap: 15%;
+    border: none;
+    border-radius: 5px 60px 5px 5px;
+    background-color: var(--darkBlue);
+}
+
+.deployment-section {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 10%;
+}
+
+.deployment-section div {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: var(--veryDarkBlue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.deployment-section div svg {
+    fill: var(--grayishBlue);
+} 
+
+/* Right Section */
+.right-section {
+    width: 500px;
+    height: 120px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-content: center;
+    gap: 15%;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--darkBlue);
+}
+
+.stats-review {
+    font-size: var(--fs);
+    color: var(--white);
+    padding-left: 25px;
+}
+.stats-review span {
+    font-weight: bold;
+}
+
+.bar-section {
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.statsLeft-review {
+    width: 30%;
+    position: absolute;
+    bottom: 230%;
+    right: 0;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+    border: none;
+    border-radius: 10px 10px 0 10px;
+    background-color: var(--white);
+}
+.statsLeft-review::before {
+    position: absolute;
+    content: "";
+    top: 100%;
+    right: 0;
+    border-width: 20px 0 0 25px;
+    border-style: solid;
+    border-color: var(--white) transparent transparent transparent;
+}
+
+.numberLeft-review {
+    font-size: 25px !important;
+    font-weight: bold;
+    color: var(--veryDarkBlue);
+}
+.gb {
+    font-size: var(fs);
+    color: var(--grayishBlue);
+    font-weight: bold;
+}
+
+.totalBar {
+    width: 100%;
+    height: 15px;
+    padding: 2px;
+    border-radius: 10px;
+    background-color: var(--veryDarkBlue);
+}
+
+.progressBar {
+    width: 80%;
+    height: 100%;
+    background-image: linear-gradient(to right, var(--gradient), var(--gradient2));
+}
+
+.memory-points {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.memory-points span {
+    font-size: var(--fs);
+    color: var(--white);
+    font-weight: bold;
+}
+
+.attribution {
+    margin-top: 50px;
+}
+.attribution:not(a) {
+    color: var(--white);
+    font-size: var(--fs);
+}
+.attribution a {
+    font-size: 20px;
+}
+
+@media screen and (max-width:calc(750px + 2rem)) {
+    .appWrapper {
+        width: 95%;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        flex-shrink: 1;
+        margin: 100px auto 0;
+    }
+    .left-section {
+        width: 300px;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-content: center;
+        gap: 0.5rem;
+    }
+    .right-section {
+        width: 300px;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-content: center;
+        gap: 0.5rem;
+    }
+    .statsLeft-review {
+        width: 65%;
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5%;
+        border: none;
+        border-radius: 10px;
+        background-color: var(--white);
+    }
+    .statsLeft-review::before {
+        display: none;
+    }
+}
+
